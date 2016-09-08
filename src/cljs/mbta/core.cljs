@@ -9,10 +9,15 @@
 ;; -------------------------
 ;; Core
 
+;; Server URL
 (def server "https://mbta-86422.herokuapp.com")
+;(def server "http://localhost:3000")
+
+;; Document data
 (defonce doc (r/atom {:departures nil}))
 
 (defn load-departures []
+  ;; Perform an AJAX request to retrieve departure data in EDN format from the server
   (GET (str server "/load-departures")
        {:format (edn-request-format)
         :response-format (edn-response-format)
@@ -27,6 +32,7 @@
    [:div [:a {:href "/departures"} "View Departures"]]])
 
 (defn table-body [departures]
+  ;; Generate table body for the given departures data
   (into [:tbody]
         (cons (into [:tr]
                     (for [header (first departures)]
