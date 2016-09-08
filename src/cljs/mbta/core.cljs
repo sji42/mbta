@@ -10,8 +10,8 @@
 ;; Core
 
 ;; Server URL
-(def server "https://mbta-86422.herokuapp.com")
-;(def server "http://localhost:3000")
+;(def server "https://mbta-86422.herokuapp.com")
+(def server "http://localhost:3000")
 
 ;; Document data
 (defonce doc (r/atom {:departures nil}))

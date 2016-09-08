@@ -8,12 +8,7 @@
             [clj-time.coerce :refer [from-long]]
             [clj-time.format :refer [formatters unparse]]))
 
-(def mount-target
-  [:div#app
-      [:h3 "ClojureScript has not been compiled!"]
-      [:p "please run "
-       [:b "lein figwheel"]
-       " in order to start the compiler"]])
+(def mount-target [:div#app [:h4 "Loading..."]])
 
 (defn head []
   [:head
