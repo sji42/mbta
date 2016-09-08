@@ -9,7 +9,7 @@
 ;; -------------------------
 ;; Core
 
-(def server "http://localhost:3000")
+(def server "https://mbta-86422.herokuapp.com")
 (defonce doc (r/atom {:departures nil}))
 
 (defn load-departures []
